@@ -58,6 +58,18 @@ export const appContractsConfig = () => {
               toolkitContracts.YourNFT__factory,
               foundryDeployedContractsJson
             ),
+      YourCoin:
+        scaffoldConfig.build.solidityToolkit === 'hardhat'
+          ? createConnectorForHardhatContract(
+              'YourCoin',
+              toolkitContracts.YourCoin__factory,
+              hardhatDeployedContractsJson
+            )
+          : createConnectorForFoundryContract(
+              'YourCoin',
+              toolkitContracts.YourCoin__factory,
+              foundryDeployedContractsJson
+            ),
 
       // --------------------------------------------------
       // 🙋🏽‍♂️ Add your external contracts here, make sure to define the address in `externalContractsConfig.ts`Í

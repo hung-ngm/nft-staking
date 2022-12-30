@@ -94,6 +94,7 @@ export const MainPage: NextPage<IMainPageProps> = (props) => {
   // init contracts
   const yourContract = useAppContracts('YourContract', ethersAppContext.chainId);
   const yourNFT = useAppContracts('YourNFT', ethersAppContext.chainId);
+  const yourCoin = useAppContracts('YourCoin', ethersAppContext.chainId);
   const mainnetDai = useAppContracts('DAI', networkDefinitions.mainnet.chainId);
 
   // keep track of a variable from the contract in the local React state:
@@ -146,6 +147,17 @@ export const MainPage: NextPage<IMainPageProps> = (props) => {
             blockExplorer={scaffoldAppProviders.currentTargetNetwork.blockExplorer}></GenericContract>
         ),
       },
+      {
+        name: 'YourCoin',
+        content: (
+          <GenericContract
+            contractName="YourCoin"
+            contract={yourCoin}
+            mainnetAdaptor={scaffoldAppProviders.mainnetAdaptor}
+            blockExplorer={scaffoldAppProviders.currentTargetNetwork.blockExplorer}></GenericContract>
+        ),
+      },
+
       {
         name: 'Mainnet-Dai',
         content: (
