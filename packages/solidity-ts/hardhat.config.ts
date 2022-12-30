@@ -60,6 +60,12 @@ const networks = {
     //   mnemonic: getMnemonic(),
     // },
   },
+  mumbai: {
+    url: 'https://polygon-mumbai.infura.io/v3/6c92582ab1ec4bd1b9de7b5942d0f759',
+    accounts: {
+      mnemonic: getMnemonic(),
+    },
+  },
 };
 
 /**
